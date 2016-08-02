@@ -1,0 +1,85 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3{
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/bg11.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+
+.intro-message {
+    position: relative;
+    padding-top: 12%;
+    padding-bottom: 32%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0.1,0.2);
+}
+
+.chart-divider{
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.form-inline{
+   margin-left: 5px;
+  }
+
+
+p.copyright {
+    margin: 12px 0 0;
+}
+
+.row{
+    padding :50px 50px 0 50px;
+}
+
+footer {
+    padding-left:20px;
+}
+.chart{
+    background: url(../img/bg6.png) ;
+    background-height:100%;
+    background-width:100%;
+    padding-bottom:100%;
+    }
+.detail{
+    padding-right:500px;
+}

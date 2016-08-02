@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="chart">
+    <div align="left" class="row">
+        <h1>Flask Chart On Sentiment Analysis </h1>
+        <hr class="chart-divider">
+    </div>
+
+    <script src='static/js/highcharts.js'></script>
+
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+    <script>
+ $(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: {
+                linearGradient: [0, 0, 500, 500],
+                stops: [
+                    [0, 'rgb(255, 255, 255)'],
+                    [0, 'rgb(200, 200, 255)']
+                ]
+            },
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Sentiment Analysis For {{topic}}'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'polarity',
+            colorByPoint: true,
+            data: [{
+                name: 'Positive',
+                y: {{pos}}
+            }, {
+                name: 'Negative',
+                y: {{neg}},
+                sliced: true,
+                selected: true
+            }]
+        }]
+    });
+});
+    </script>
+
+    <div class="row">
+        <h4>Your Keyword : "<b>{{topic}}</b>" </h4>
+        <ul>
+            <li><p><b>Total tweets processed: {{pos +neg}} </b></p></li>
+            <li><p><b>Total Positive : {{pos}} </b></p></li>
+            <li><p><b>Total Negative : {{neg}} </b></p></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <H4>Current Tweets about : "{{topic}}"</H4>
+
+        {% for tweet in tweets %}
+        <ul>
+            <li>{{tweet}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
