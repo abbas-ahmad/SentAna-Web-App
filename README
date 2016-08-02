@@ -1,3 +1,4 @@
 #SentAna-Web-App
-Web Application for finding sentiment on the tweets received from Twitter Streaming API. The Application uses Flask python framework to handle back-end task.
+Web Application for finding sentiment on the tweets received from Twitter Streaming API. 
+The Application uses Flask python framework to handle back-end task.
 
