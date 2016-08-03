@@ -1,1 +1,22 @@
-<h1>contact page</h1>
+{% extends 'base.html' %}
+{% block content %}
+<link type="text/css" href="static/css/contact.css" rel="stylesheet">
+<div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1" action="/contact" method="POST">
+
+      <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" required/>
+
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" required/>
+
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
+  </div>
+
+{% endblock%}
